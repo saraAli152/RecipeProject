@@ -1,0 +1,15 @@
+.card-img-custom {
+  height: 180px;
+  object-fit: cover;
+}
+.card-no-image {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+.icon-large {
+  font-size: 3rem;
+  color: #6c757d;
+}

@@ -1,0 +1,17 @@
+<!-- Loop through recipe rows -->
+
+<!-- Loop through recipes in each row -->
+
+<div class="card h-100" (click)="onSelect()">
+  <img
+    *ngIf="recipe.imagePath"
+    [src]="recipe.imagePath"
+    class="card-img-top h-100"
+    [alt]="recipe.name"
+    style="object-fit: cover"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ recipe.name }}</h5>
+    <p class="card-text">{{ recipe.description }}</p>
+  </div>
+</div>

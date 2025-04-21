@@ -1,0 +1,70 @@
+<div class="container recipe-detail">
+  <!-- Image Section -->
+  <div class="row mb-4 p-2">
+    <div class="col-12">
+      <img
+        [src]="recipe.imagePath"
+        class="img-fluid rounded shadow"
+        [alt]="recipe.name"
+        style="max-height: 400px; width: 100%; object-fit: cover"
+      />
+    </div>
+  </div>
+
+  <!-- Title and Actions Section -->
+  <div class="row align-items-center mb-4">
+    <div class="col-md-8">
+      <h1 class="display-4 fw-bold">{{ recipe.name }}</h1>
+      <p class="lead text-muted" *ngIf="recipe.description">
+        {{ recipe.description }}
+      </p>
+    </div>
+    <div class="col-md-4 text-md-end">
+      <div class="btn-group" dropdown>
+        <button
+          type="button"
+          class="btn btn-success dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Manage Recipe <i class="bi bi-caret-down-fill ms-1"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item" (click)="addToShoppingList()"
+              >Add To Shopping List</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item">dit Recipe</a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item text-danger">Delete Recipe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ingredients and Instructions -->
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100 border-success">
+        <div class="card-header">
+          <h2 class="h5 mb-0">
+            <i class="bi bi-list-check me-2"></i>Ingredients
+          </h2>
+        </div>
+        <div class="card-body">
+          <hr />
+          <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer" href="#">
+              {{ recipe.ingradient.name }} - ({{ recipe.ingradient.amount }})
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
