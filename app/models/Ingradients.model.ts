@@ -1,4 +1,3 @@
-export interface Ingradients {
-  name: string;
-  amount: number;
+export class Ingradients {
+  constructor(public name: string, public amount: number) {}
 }

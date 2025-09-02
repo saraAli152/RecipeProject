@@ -3,7 +3,7 @@
   <div class="row mb-4 p-2">
     <div class="col-12">
       <img
-        [src]="recipe.imagePath"
+        [src]="recipe.imageUrl"
         class="img-fluid rounded shadow"
         [alt]="recipe.name"
         style="max-height: 400px; width: 100%; object-fit: cover"
@@ -36,11 +36,15 @@
             >
           </li>
           <li>
-            <a class="dropdown-item">dit Recipe</a>
+            <a class="dropdown-item" (click)="onEditRecipe()">edit Recipe</a>
           </li>
           <li><hr class="dropdown-divider" /></li>
           <li>
-            <a class="dropdown-item text-danger">Delete Recipe</a>
+            <a
+              class="dropdown-item text-danger"
+              (click)="onDeleteRecipe()"
+              >Delete Recipe</a
+            >
           </li>
         </ul>
       </div>
@@ -58,9 +62,9 @@
         </div>
         <div class="card-body">
           <hr />
-          <ul class="list-group">
+          <ul class="list-group" *ngFor="let ingradient of recipe.ingradients">
             <a class="list-group-item" style="cursor: pointer" href="#">
-              {{ recipe.ingradient.name }} - ({{ recipe.ingradient.amount }})
+              {{ ingradient.name }} - ({{ ingradient.amount }})
             </a>
           </ul>
         </div>

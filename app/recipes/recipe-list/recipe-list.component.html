@@ -1,14 +1,16 @@
 <div class="row">
   <div class="col-md-12 mt-3">
-    <button class="btn btn-light">Add New Recipe</button>
+    <button class="btn btn-light" (click)="onNewRecipe()">
+      Add New Recipe
+    </button>
   </div>
 
   <div class="container py-4">
     <h2 class="mb-4 text-center">Our Delicious Recipes</h2>
     <div class="row">
-      <ng-container *ngFor="let recipe of recipes">
+      <ng-container *ngFor="let recipe of recipes; let i = index">
         <div class="col-md-6 mb-2">
-          <app-recipe-item [recipe]="recipe"></app-recipe-item>
+          <app-recipe-item [index]="i" [recipe]="recipe"></app-recipe-item>
         </div>
       </ng-container>
     </div>

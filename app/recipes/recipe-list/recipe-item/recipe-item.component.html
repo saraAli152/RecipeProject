@@ -2,10 +2,9 @@
 
 <!-- Loop through recipes in each row -->
 
-<div class="card h-100" (click)="onSelect()">
+<div class="card h-100" [routerLink]="[index]" routerLinkActive="active">
   <img
-    *ngIf="recipe.imagePath"
-    [src]="recipe.imagePath"
+    [src]="recipe.imageUrl ? recipe.imageUrl : './assets/images/Piazza-4.webp'"
     class="card-img-top h-100"
     [alt]="recipe.name"
     style="object-fit: cover"

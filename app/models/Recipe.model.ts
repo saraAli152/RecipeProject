@@ -1,19 +1,22 @@
-import { Ingradients } from './Ingradients.model';
+import { Ingradients } from "./Ingradients.model";
 
 export class Recipe {
+ 
   public name: string;
   public description: string;
-  public imagePath: string;
-  public ingradient: Ingradients;
+  public imageUrl: string;
+  public ingradients: Ingradients[];
   constructor(
+   
     name: string,
     description: string,
-    imagePath: string,
-    ingradient: Ingradients
+    imageUrl: string,
+    ingradients: Ingradients[]
   ) {
+   
     this.name = name;
     this.description = description;
-    this.imagePath = imagePath;
-    this.ingradient = ingradient;
+    this.imageUrl = imageUrl;
+    this.ingradients = ingradients;
   }
 }

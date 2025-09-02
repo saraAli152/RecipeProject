@@ -1,25 +1,55 @@
 <div class="row">
   <div class="col-md-12">
-    <form>
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-md-5 form-group">
           <label for="name">Name :</label>
-          <input type="text" #nameInput class="form-control" id="name" />
+          <input
+            type="text"
+            name="name"
+            #name="ngModel"
+            ngModel
+            required
+            class="form-control"
+            id="name"
+          />
+          @if(name.invalid&&name.touched){
+          <small class="text-danger"> amount required</small>
+
+          }
         </div>
         <div class="col-md-2 form-group">
           <label for="amount">amount :</label>
-          <input type="text" #amountInput class="form-control" id="amount" />
+          <input
+            type="text"
+            name="amount"
+            #amount="ngModel"
+            ngModel
+            required
+            class="form-control"
+            id="amount"
+          />
+          @if(amount.invalid&&amount.touched){
+          <small class="text-danger"> amount required</small>
+
+          }
         </div>
         <br />
         <div class="row">
           <div class="col-md-12 mt-2">
-            <button class="btn btn-success" type="button" (click)="onAddItem()">
-              Add
+            <button class="btn btn-success" [disabled]="!f.valid" type="submit">
+              {{ editMode ? "edit" : "Add" }}
             </button>
             &nbsp;
-            <button class="btn btn-success">Clear</button>
+            <button class="btn btn-success" (click)="onClear()">Clear</button>
             &nbsp;
-            <button class="btn btn-success">Delete</button>
+            <button
+              *ngIf="editMode"
+              class="btn btn-danger"
+              (click)="onDelete()"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>

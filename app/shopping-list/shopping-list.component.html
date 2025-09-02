@@ -5,11 +5,11 @@
     <ul class="list-group">
       <a
         class="list-group-item"
+        (click)="onEdit(i)"
         style="cursor: pointer"
-        href="#"
-        *ngFor="let ingradient of ingradients"
+        *ngFor="let ingradient of ingradients; let i = index"
       >
-        {{ ingradient.name }} -({{ ingradient.amount }})
+        {{ ingradient.name }} {{ ingradient.amount }}
       </a>
     </ul>
   </div>

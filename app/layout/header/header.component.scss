@@ -1,3 +1,11 @@
 .nav-link {
   cursor: pointer;
 }
+.Active {
+  background-color: white !important;
+  color: green !important;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem; /* مسافات داخلية */
+  font-weight: 600; /* وزن الخط */
+  transition: 0.3s ease;
+}
